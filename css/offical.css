@@ -1,0 +1,37 @@
+.header {
+ 
+    width:100%;
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+    position: fixed;
+    top: 0;
+}
+
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.footer {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: #34495E;
+}
+
+#container-01 {
+    max-width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.carousel-item img{
+    max-width:100%;
+    height: auto;
+}
+
+.dropdown-menu {
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
+}

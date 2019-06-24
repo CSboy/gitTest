@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>音乐推荐网站</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="scripts/offical.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/offical.css">
+    </head>
+    <body>
+        <div class="container" id="container-01">
+            <div class="header">
+                <nav class="navbar navbar-expand-sm navbar-light">
+                    <a class="navbar-brand" href="#">飞音</a>
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">期刊</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">单曲</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">专辑</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">活动</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">APP</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">安卓</a>
+                                <a class="dropdown-item" href="#">ios</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav" id="login-01">
+                        <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#login" href="">登录</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#register" href="">注册</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div class="main">
+                <div id="login" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button class="close" data-dismiss="modal">
+                                    <span>&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-title">
+                                <h3 class="text-center">登录</h3>
+                            </div>
+                            <div class="modal-body">
+                                <form class="form-group" onsubmit="return false">
+                                    <div class="form-group">
+                                        <label for="">用户名</label>
+                                        <input class="form-control" type="text" id="username-01" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">密码</label>
+                                        <input class="form-control" type="password" id="password-01" placeholder="">
+                                    </div>                                    
+                                    <div class="text-left" style="display:inline">
+                                        <span style="color:red" id="hint-01"></span>
+                                    </div>
+                                    <div class="text-right">
+                                        <button class="btn btn-primary" id="submit-01" type="submit">登录</button>
+                                        <button class="btn btn-danger" data-dismiss="modal">取消</button>
+                                    </div>
+                                    <a href="" data-toggle="modal" data-dismiss="modal" data-target="#register">还没有账号？点我注册</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="register" class="modal fade" tabindex="-1"> 
+                    <div class="modal-dialog"> 
+                        <div class="modal-content"> 
+                            <div class="modal-body"> 
+                                <button class="close" data-dismiss="modal"> 
+                                    <span>&times;</span> 
+                                </button> 
+                            </div> 
+                            <div class="modal-title"> 
+                                <h3 class="text-center">注册</h3> 
+                            </div> 
+                            <div class="modal-body"> 
+                                <form class="form-group" onsubmit="return false" id="form-02"> 
+                                    <div class="form-group"> 
+                                        <label for="">用户名</label> 
+                                        <span style="color:red">*</span>
+                                        <input class="form-control" type="text" pattern="^[a-zA-Z0-9]{6,15}$" id="username-02" placeholder="6-15位字母或数字" required> 
+                                    </div> 
+                                    <div class="form-group"> 
+                                        <label for="">密码</label> 
+                                        <span style="color:red">*</span>
+                                        <input class="form-control" type="password" pattern="^[a-zA-Z0-9]{6,15}$" id="password-021" placeholder="6-15位字母或数字" required> 
+                                    </div> 
+                                    <div class="form-group"> 
+                                        <label for="">再次输入密码</label> 
+                                        <span style="color:red">*</span>
+                                        <input class="form-control" type="password" pattern="^[a-zA-Z0-9]{6,15}$" id="password-022" placeholder="6-15位字母或数字" required> 
+                                    </div> 
+                                    <div class="form-group">
+                                        <label for="">邮箱</label>
+                                        <input class="form-control" type="email" id="email" placeholder="邮箱地址如：abc@163.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">年龄</label>
+                                        <input class="form-control" type="text" id="age" pattern="((1[0-5])|[1-9])?\d" placeholder="年龄：1-159">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">电话</label>
+                                        <input class="form-control" type="text" id="tel" pattern="1[34578]\d{9}" placeholder="11位手机号码">
+                                    </div>
+                                    <div class="text-left" style="display:inline">
+                                        <span style="color:red" id="hint-02"></span>
+                                    </div>
+                                    <div class="text-right"> 
+                                        <button class="btn btn-primary" type="submit" id="submit-02">提交</button> 
+                                        <button class="btn btn-danger" data-dismiss="modal">取消</button> 
+                                    </div> 
+                                    <a href="" data-toggle="modal" data-dismiss="modal" data-target="#login">已有账号？点我登录</a> 
+                                </form> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div>
+
+                <div id="demo" class="carousel slide" data-ride="carousel">
+                    <!-- 指示符 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- 轮播图片 -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="images/Carousel1.jpg" alt="Something wrong...">
+                            <div class="carousel-caption">
+                                <h1>Good Life</h1>
+                                <h3>OneRepublic-Waking Up</h3>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/Carousel2.jpg" alt="Something wrong...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/Carousel3.jpg" alt="Something wrong...">
+                        </div>
+                    </div>
+
+                    <!-- 左右切换按钮 -->
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <nav class="navbar navbar-expand-sm navbar-light">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.weibo.com/101RocketGirls?is_hot=1">
+                                    <img src="images/weibo.png" alt="微博">
+                                </a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Home Page</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                ©2018 Created by CoolKid Studio
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    </body>
+</html>
